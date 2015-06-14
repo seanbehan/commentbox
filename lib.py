@@ -10,7 +10,7 @@ def search_places(lat=None, lng=None, place_id=None):
     if place_id:
         return get_place(place_id=place_id)
 
-    return [dict(name=p['name'], place_id=p['place_id']) for p in  get_places(lat=lat, lng=lng)['results']]
+    return [dict(name=p['name'], place_id=p['place_id']) for p in google_places(lat=lat, lng=lng)['results']]
 
 def get_place(place_id):
     '''

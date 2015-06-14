@@ -9,8 +9,8 @@ def home():
 
 @app.route("/places.json")
 def places():
-    lat = float(request.args.get('lat'))
-    lng = float(request.args.get('lng'))
+    lat = float(request.args.get('lat', '0.0'))
+    lng = float(request.args.get('lng', '0.0'))
 
     return json.dumps(search_places(lat=lat,lng=lng))
 
