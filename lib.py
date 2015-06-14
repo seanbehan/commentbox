@@ -12,11 +12,6 @@ def search_places(lat=None, lng=None, place_id=None):
 
     return [dict(name=p['name'], place_id=p['place_id']) for p in  get_places(lat=lat, lng=lng)['results']]
 
-
-def get_places(lat,lng):
-    ''' look up place from google places api'''
-    return google_places(lat,lng)
-
 def get_place(place_id):
     '''
     return place from database or google places api
